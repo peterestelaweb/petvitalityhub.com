@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LifePlus Pets - Consola de ventas</title>
+    <script
+      src="../access-gate.js"
+      data-code="1994,1114,1-1-1-4"
+      data-key="ventas"
+      data-title="Consola de ventas"
+      data-subtitle="Introduce la clave 1994 para acceder a los guiones de llamadas."
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=20260505-email-templates" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="shell header-inner">
+        <a class="brand" href="../index.html" aria-label="Volver a LifePlus Pets">
+          <span class="brand-mark">+</span>
+          <span>
+            <strong>LifePlus Pets</strong>
+            <small>Panel de control de ventas</small>
+          </span>
+        </a>
+        <div class="header-actions">
+          <button class="btn btn-soft" id="resetDataBtn" type="button">Resetear</button>
+          <a class="btn btn-dark" href="../crm-care-comfort/">Abrir CRM</a>
+        </div>
+      </div>
+    </header>
+
+    <nav class="tabs" aria-label="Secciones de venta">
+      <div class="shell tabs-inner">
+        <button class="tab is-active" data-tab="scripts" type="button">
+          <span>☎</span>
+          Llamadas
+        </button>
+        <button class="tab" data-tab="whatsapp" type="button">
+          <span>✉</span>
+          WhatsApp
+        </button>
+        <button class="tab" data-tab="emails" type="button">
+          <span>@</span>
+          Email
+        </button>
+        <button class="tab" data-tab="objeciones" type="button">
+          <span>!</span>
+          Objeciones
+        </button>
+        <button class="tab" data-tab="productos" type="button">
+          <span>▣</span>
+          Fichas
+        </button>
+      </div>
+    </nav>
+
+    <main class="shell main">
+      <section class="overview">
+        <div>
+          <p class="eyebrow">Care &amp; Comfort</p>
+          <h1>Guiones rápidos para clínicas veterinarias</h1>
+          <p>
+            Textos listos para llamar, copiar y adaptar durante el contacto con
+            clínicas, tiendas y centros pet-friendly.
+          </p>
+        </div>
+        <div class="metric-grid" aria-label="Resumen operativo">
+          <article class="metric metric-call">
+            <strong>2</strong>
+            <span>guiones de llamada</span>
+          </article>
+          <article class="metric metric-wa">
+            <strong>3</strong>
+            <span>mensajes WhatsApp</span>
+          </article>
+          <article class="metric metric-email">
+            <strong>6</strong>
+            <span>emails por perfil</span>
+          </article>
+          <article class="metric metric-obj">
+            <strong>3</strong>
+            <span>respuestas técnicas</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel is-active" id="panel-scripts" data-panel="scripts">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Teléfono</p>
+            <h2>Llamadas</h2>
+          </div>
+          <p>Usa la versión suave para recepción y la directa para decisores.</p>
+        </div>
+        <div class="stack" id="scriptsList"></div>
+      </section>
+
+      <section class="panel" id="panel-whatsapp" data-panel="whatsapp">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Seguimiento</p>
+            <h2>WhatsApp</h2>
+          </div>
+          <p>Mensajes breves para enviar ficha, retomar conversación y explicar la diferencia con químicos.</p>
+        </div>
+        <div class="stack" id="whatsappList"></div>
+      </section>
+
+      <section class="panel" id="panel-emails" data-panel="emails">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Veterinarios</p>
+            <h2>Email por perfil</h2>
+          </div>
+          <p>Plantillas largas para decisores, clinicas pequenas, centrales y centros con sensibilidad familiar.</p>
+        </div>
+        <div class="compliance-note">
+          <strong>Linea segura:</strong>
+          Care &amp; Comfort es solo para perros, de uso externo, sin permetrina y con aceites naturales. No lo presentes como sustituto de protocolos veterinarios ni como garantia medica para personas.
+        </div>
+        <div class="stack" id="emailsList"></div>
+      </section>
+
+      <section class="panel" id="panel-objeciones" data-panel="objeciones">
+        <div class="objection-hero">
+          <div class="objection-icon">!</div>
+          <div>
+            <p class="eyebrow">Escudo técnico</p>
+            <h2>"¿Es tan potente como la química?"</h2>
+          </div>
+        </div>
+        <div class="stack compact" id="objectionsList"></div>
+      </section>
+
+      <section class="panel" id="panel-productos" data-panel="productos">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Referencia rápida</p>
+            <h2>Fichas de producto</h2>
+          </div>
+          <p>Datos sencillos para orientar la conversación y saber cuándo presentar cada producto.</p>
+        </div>
+        <div class="product-grid" id="productsList"></div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <footer class="app-footer">
+      <div class="shell footer-inner">
+        <span>LifePlus Pets Sales Console V4.1</span>
+        <span id="syncStatus">Sincronizacion local</span>
+      </div>
+    </footer>
+
+    <script src="./script.js?v=20260505-email-templates"></script>
+  </body>
+</html>
