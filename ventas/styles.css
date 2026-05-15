@@ -487,24 +487,6 @@ h2 {
   line-height: 1.45;
 }
 
-.video-grid .video-card {
-  border-top-color: var(--green);
-}
-
-.video-preview {
-  overflow: hidden;
-  border-radius: 14px;
-  background: #06110f;
-}
-
-.video-preview video {
-  display: block;
-  width: 100%;
-  aspect-ratio: 9 / 16;
-  object-fit: cover;
-  background: #06110f;
-}
-
 .product-meta {
   display: grid;
   gap: 8px;
