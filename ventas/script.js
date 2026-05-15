@@ -408,12 +408,91 @@ function renderProducts() {
     .join("");
 }
 
+const videoCatalog = [
+  {
+    id: "video-digest",
+    tag: "Digest",
+    title: "Digest Support",
+    desc: "Salud digestiva para tu mascota",
+    video: "https://lifeplus-pets-videos.netlify.app/lifeplus_digest.mp4",
+    poster: "./media-posters/digest.jpg",
+  },
+  {
+    id: "video-biscuits",
+    tag: "Biscuits",
+    title: "Healthy Biscuits",
+    desc: "Galletas naturales y saludables",
+    video: "https://lifeplus-pets-videos.netlify.app/lifeplus_biscuits.mp4",
+    poster: "./media-posters/biscuits.jpg",
+  },
+  {
+    id: "video-ahiflower",
+    tag: "Ahiflower",
+    title: "Ahiflower Oil",
+    desc: "Aceite omega esencial",
+    video: "https://lifeplus-pets-videos.netlify.app/lifeplus_ahiflower.mp4",
+    poster: "./media-posters/ahiflower.jpg",
+  },
+  {
+    id: "video-joint",
+    tag: "Joint",
+    title: "Joint Support",
+    desc: "Articulaciones fuertes y sanas",
+    video: "https://lifeplus-pets-videos.netlify.app/lifeplus_joint.mp4",
+    poster: "./media-posters/joint.jpg",
+  },
+  {
+    id: "video-calming",
+    tag: "Calming",
+    title: "Calming Aid",
+    desc: "Relajación natural para tu mascota",
+    video: "https://lifeplus-pets-videos.netlify.app/lifeplus_calming.mp4",
+    poster: "./media-posters/calming.jpg",
+  },
+  {
+    id: "video-multivitamin",
+    tag: "Multi",
+    title: "Multivitamin",
+    desc: "Vitaminas completas diarias",
+    video: "https://lifeplus-pets-videos.netlify.app/lifeplus_multivitamin.mp4",
+    poster: "./media-posters/multivitamin.jpg",
+  },
+];
+
+function renderVideos() {
+  const target = document.getElementById("videosList");
+  if (!target) return;
+
+  target.innerHTML = videoCatalog
+    .map(
+      (item) => `
+        <article class="product-card video-card">
+          <div class="video-preview">
+            <video controls playsinline preload="metadata" poster="${item.poster}">
+              <source src="${item.video}" type="video/mp4" />
+            </video>
+          </div>
+          <div>
+            <h3>${escapeHtml(item.title)}</h3>
+            <p>${escapeHtml(item.desc)}</p>
+          </div>
+          <div class="product-meta">
+            <span>${escapeHtml(item.tag)}</span>
+            <span>Vídeo original sin QR</span>
+          </div>
+        </article>
+      `,
+    )
+    .join("");
+}
+
 function renderAll() {
   renderScripts();
   renderWhatsApp();
   renderEmails();
   renderObjections();
   renderProducts();
+  renderVideos();
 }
 
 document.querySelector(".tabs-inner").addEventListener("click", (event) => {

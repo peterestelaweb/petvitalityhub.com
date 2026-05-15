@@ -30,7 +30,7 @@
           </span>
         </a>
         <div class="header-actions">
-          <a class="btn btn-soft" href="videos.html">Vídeos QR</a>
+          <button class="btn btn-soft" data-tab="videos" type="button">Vídeos</button>
           <button class="btn btn-soft" id="resetDataBtn" type="button">Resetear</button>
           <a class="btn btn-dark" href="../crm-care-comfort/">Abrir CRM</a>
         </div>
@@ -58,6 +58,10 @@
         <button class="tab" data-tab="productos" type="button">
           <span>▣</span>
           Fichas
+        </button>
+        <button class="tab" data-tab="videos" type="button">
+          <span>▶</span>
+          Vídeos
         </button>
       </div>
     </nav>
@@ -149,6 +153,17 @@
           <p>Datos sencillos para orientar la conversación y saber cuándo presentar cada producto.</p>
         </div>
         <div class="product-grid" id="productsList"></div>
+      </section>
+
+      <section class="panel" id="panel-videos" data-panel="videos">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Catálogo visual</p>
+            <h2>Vídeos originales de producto</h2>
+          </div>
+          <p>Material neutro, sin QR, para enviar cuando quieras una pieza visual más directa.</p>
+        </div>
+        <div class="product-grid video-grid" id="videosList"></div>
       </section>
     </main>
 
