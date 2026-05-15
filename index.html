@@ -11,7 +11,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Montserrat:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
     /* ===========================
@@ -258,6 +258,59 @@
       background: rgba(255,255,255,0.12);
     }
 
+    .nav-utility {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(10px);
+    }
+
+    .lang-switcher button {
+      border: none;
+      background: transparent;
+      color: rgba(255,255,255,0.82);
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 9px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .lang-switcher button:hover,
+    .lang-switcher button:focus-visible {
+      color: var(--white);
+      background: rgba(255,255,255,0.10);
+      outline: none;
+    }
+
+    .lang-switcher button.is-active {
+      background: var(--white);
+      color: var(--green-deep);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    }
+
+    .lang-switcher button[lang="ar"] {
+      font-family: 'Cairo', sans-serif;
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
     .nav-cta {
       background: var(--white) !important;
       color: var(--green-deep) !important;
@@ -291,6 +344,17 @@
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .hamburger { display: flex; }
+      .nav-utility {
+        margin-left: auto;
+      }
+      .lang-switcher {
+        gap: 4px;
+        padding: 5px;
+      }
+      .lang-switcher button {
+        padding: 8px 10px;
+        font-size: 10px;
+      }
       .nav-links.open {
         display: flex;
         flex-direction: column;
@@ -2018,10 +2082,38 @@
       .hero-actions { flex-direction: column; }
       .hero-actions .btn { width: 100%; justify-content: center; }
       .vets-form { padding: 28px 20px; }
+      .nav-logo-sub { display: none; }
+      .lang-switcher button[lang="ar"] { font-size: 12px; }
+    }
+
+    html[dir="rtl"] body {
+      font-family: 'Cairo', system-ui, sans-serif;
+    }
+
+    html[dir="rtl"] .navbar .container,
+    html[dir="rtl"] .nav-links,
+    html[dir="rtl"] .hero-actions,
+    html[dir="rtl"] .hero-stats,
+    html[dir="rtl"] .guide-preview-actions,
+    html[dir="rtl"] .products-grid,
+    html[dir="rtl"] .footer-bottom-inner {
+      direction: rtl;
+    }
+
+    html[dir="rtl"] .hero-stat,
+    html[dir="rtl"] .guide-preview-point,
+    html[dir="rtl"] .footer-grid,
+    html[dir="rtl"] .product-content,
+    html[dir="rtl"] .faq-question,
+    html[dir="rtl"] .faq-answer-inner,
+    html[dir="rtl"] .footer-col,
+    html[dir="rtl"] .footer-disclaimer,
+    html[dir="rtl"] .footer-copyright {
+      text-align: right;
     }
   </style>
 </head>
-<body>
+<body data-page="home" data-locale="es">
 
   <!-- =================== NAVBAR =================== -->
   <nav class="navbar" id="navbar">
@@ -2048,6 +2140,14 @@
           </a>
         </li>
       </ul>
+
+      <div class="nav-utility">
+        <div class="lang-switcher" aria-label="Selector de idioma">
+          <button type="button" class="is-active" data-lang="es">ES</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="ar" lang="ar">العربية</button>
+        </div>
+      </div>
 
       <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú" role="button" tabindex="0">
         <span></span>
@@ -2085,6 +2185,9 @@
           </a>
           <a href="#productos" class="btn btn-outline">
             🌿 Ver productos
+          </a>
+          <a href="videos/" class="btn btn-outline">
+            🎬 Ver vídeos QR
           </a>
           <a href="#veterinarios" class="btn btn-outline">
             🩺 Para veterinarios
@@ -2145,6 +2248,7 @@
           <div class="guide-preview-actions">
             <a href="guia.html" class="btn btn-primary">Ver la guía completa</a>
             <a href="guia.html#productos" class="btn btn-outline">Ir a las fichas</a>
+            <a href="videos/" class="btn btn-outline">Abrir vídeos QR</a>
           </div>
         </div>
 
@@ -3278,5 +3382,6 @@
       });
     })();
   </script>
+  <script src="assets/js/site-language.js"></script>
 </body>
 </html>
