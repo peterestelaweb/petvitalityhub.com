@@ -8,6 +8,9 @@
     name="description"
     content="Guía práctica de LifePlus Pets con resumen general, fichas por producto, pautas de uso y acceso rápido a la información complementaria."
   />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
       --green-deep: #1b5e3b;
@@ -121,6 +124,52 @@
       gap: 10px;
       flex-wrap: wrap;
       justify-content: flex-end;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px;
+      border-radius: 999px;
+      background: rgba(27,94,59,0.07);
+      border: 1px solid rgba(16,36,26,0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .lang-switcher button {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 9px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+    }
+
+    .lang-switcher button:hover,
+    .lang-switcher button:focus-visible {
+      background: rgba(27,94,59,0.08);
+      color: var(--green-deep);
+      outline: none;
+    }
+
+    .lang-switcher button.is-active {
+      background: var(--green-deep);
+      color: var(--white);
+      box-shadow: 0 10px 22px rgba(16,36,26,0.12);
+    }
+
+    .lang-switcher button[lang="ar"] {
+      font-family: 'Cairo', sans-serif;
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: 13px;
+      font-weight: 700;
     }
 
     .btn {
@@ -757,6 +806,10 @@
         justify-content: flex-start;
       }
 
+      .lang-switcher {
+        order: -1;
+      }
+
       .hero {
         padding-top: 38px;
       }
@@ -825,9 +878,34 @@
       width: 100%;
       height: auto;
     }
+
+    html[dir="rtl"] body {
+      font-family: 'Cairo', system-ui, sans-serif;
+    }
+
+    html[dir="rtl"] .site-topbar-inner,
+    html[dir="rtl"] .topbar-actions,
+    html[dir="rtl"] .hero-actions,
+    html[dir="rtl"] .hero-notes,
+    html[dir="rtl"] .toc-links,
+    html[dir="rtl"] .inline-actions,
+    html[dir="rtl"] .footer-inner {
+      direction: rtl;
+    }
+
+    html[dir="rtl"] .hero,
+    html[dir="rtl"] .panel,
+    html[dir="rtl"] .product-body,
+    html[dir="rtl"] .toc,
+    html[dir="rtl"] .summary-card,
+    html[dir="rtl"] .detail-card,
+    html[dir="rtl"] .final-cta,
+    html[dir="rtl"] .footer-copy {
+      text-align: right;
+    }
   </style>
 </head>
-<body>
+<body data-page="guide" data-locale="es">
   <div class="site-topbar">
     <div class="container site-topbar-inner">
       <a href="index.html" class="brand">
@@ -839,6 +917,11 @@
       </a>
 
       <div class="topbar-actions">
+        <div class="lang-switcher" aria-label="Selector de idioma">
+          <button type="button" class="is-active" data-lang="es">ES</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="ar" lang="ar">العربية</button>
+        </div>
         <a href="index.html" class="btn btn-ghost">Volver a la home</a>
         <a href="https://ww1.lifeplus.com/SHVCB5/M/es/es/web-page/products?search=pets" target="_blank" rel="noopener" class="btn btn-primary">Comprar</a>
       </div>
@@ -1458,5 +1541,6 @@
       <!-- NEUTRO-REMOVE-END -->
     </div>
   </footer>
+  <script src="assets/js/site-language.js"></script>
 </body>
 </html>

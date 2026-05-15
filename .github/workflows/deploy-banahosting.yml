@@ -22,6 +22,7 @@ on:
       - 'crm/**'
       - 'crm-care-comfort/**'
       - 'videos/**'
+      - 'videos-neutral/**'
 
 jobs:
   deploy:
@@ -69,7 +70,7 @@ jobs:
           if [ -d ventas ]; then cp -R ventas neutro/; fi
           if [ -d crm ]; then cp -R crm neutro/; fi
           if [ -d crm-care-comfort ]; then cp -R crm-care-comfort neutro/; fi
-          if [ -d videos ]; then cp -R videos neutro/; fi
+          if [ -d videos-neutral ]; then cp -R videos-neutral neutro/videos; fi
           if [ "$DEPLOY_RUNTIME_DATA" != "true" ]; then
             rm -rf neutro/ventas/data neutro/crm/data neutro/crm-care-comfort/data
           fi
