@@ -503,6 +503,34 @@ h2 {
   text-transform: uppercase;
 }
 
+.product-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.product-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  border-radius: 10px;
+  background: #102a27;
+  color: #fff;
+  padding: 7px 10px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.product-actions a:nth-child(2) {
+  background: var(--teal-2);
+}
+
+.product-actions a:nth-child(3) {
+  background: #edf1ea;
+  color: var(--teal);
+}
+
 .toast {
   position: fixed;
   right: 18px;
