@@ -24,6 +24,7 @@ on:
       - 'videos.html'
       - 'videos/**'
       - 'videos-neutral/**'
+      - '.github/workflows/deploy-banahosting.yml'
 
 jobs:
   deploy:
@@ -56,9 +57,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /petvitalityhub.com/
+          server-dir: /
           local-dir: ./public/
-          dangerous-clean-slate: true
           security: loose
           log-level: standard
 
