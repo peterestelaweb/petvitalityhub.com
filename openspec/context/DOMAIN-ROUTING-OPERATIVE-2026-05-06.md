@@ -27,6 +27,15 @@ This note defines the canonical domain routing to avoid confusion during deploym
   - `videos/index.html` plus `videos/media/`
 - Keep `ventas/` reserved for the CRM / sales console. Do not embed the video catalogue inside `ventas/`.
 
+## Neutral sync history
+
+- The previous automatic neutral update was not magic in the hosting panel. It was a GitHub Actions workflow named `Sync -> Repo Neutro`.
+- That workflow triggered on changes to `index.html` in the main repo.
+- It generated `index-neutro.html` by copying the main `index.html`, replacing shop links / `SHVCB5`, and removing content wrapped in `NEUTRO-REMOVE` markers.
+- It then pushed the generated file to `peterestelaweb/lifepluspetsneutro` using the GitHub secret `NEUTRO_TOKEN`.
+- Historical evidence: repo `peterestelaweb/lifepluspetsneutro` has an Actions-authored commit named `sync: actualización automática desde lifepluspetshvcb5`.
+- Recommended future model: keep `petvitalityhub.com` and `lifepluspetsneutro` as separate repos, but restore a controlled sync workflow from the main repo to the neutral repo.
+
 ## 2026-05-16 incident note
 
 - Symptom: `https://petvitalityhub.com/videos.html` and `https://petvitalityhub.com/videos/` returned `404` even though GitHub Actions succeeded.
