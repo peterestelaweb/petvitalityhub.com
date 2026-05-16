@@ -46,6 +46,7 @@ jobs:
           if [ -d crm ]; then cp -R crm public/; fi
           if [ -d crm-care-comfort ]; then cp -R crm-care-comfort public/; fi
           if [ -f videos.html ]; then cp videos.html public/videos.html; fi
+          if [ -f videos/index.html ]; then mkdir -p public/videos && cp videos/index.html public/videos/index.html; fi
           if [ -d videos/media ]; then mkdir -p public/videos && cp -R videos/media public/videos/; fi
           if [ "$DEPLOY_RUNTIME_DATA" != "true" ]; then
             rm -rf public/ventas/data public/crm/data public/crm-care-comfort/data
