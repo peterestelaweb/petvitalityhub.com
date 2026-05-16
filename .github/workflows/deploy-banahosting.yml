@@ -44,8 +44,8 @@ jobs:
           if [ -d ventas ]; then cp -R ventas public/; fi
           if [ -d crm ]; then cp -R crm public/; fi
           if [ -d crm-care-comfort ]; then cp -R crm-care-comfort public/; fi
-          if [ -f videos.html ]; then cp videos.html public/ventas/videos.html; fi
-          if [ -d videos/media ]; then mkdir -p public/ventas/videos && cp -R videos/media public/ventas/videos/; fi
+          if [ -f videos.html ]; then cp videos.html public/videos.html; fi
+          if [ -d videos/media ]; then mkdir -p public/videos && cp -R videos/media public/videos/; fi
           if [ "$DEPLOY_RUNTIME_DATA" != "true" ]; then
             rm -rf public/ventas/data public/crm/data public/crm-care-comfort/data
           fi
@@ -73,8 +73,8 @@ jobs:
           if [ -d ventas ]; then cp -R ventas neutro/; fi
           if [ -d crm ]; then cp -R crm neutro/; fi
           if [ -d crm-care-comfort ]; then cp -R crm-care-comfort neutro/; fi
-          if [ -d videos-neutral ]; then cp videos-neutral/index.html neutro/ventas/videos.html; fi
-          if [ -d videos-neutral/media ]; then mkdir -p neutro/ventas && cp -R videos-neutral/media neutro/ventas/; fi
+          if [ -d videos-neutral ]; then cp videos-neutral/index.html neutro/videos.html; fi
+          if [ -d videos-neutral/media ]; then mkdir -p neutro/videos && cp -R videos-neutral/media neutro/videos/; fi
           if [ "$DEPLOY_RUNTIME_DATA" != "true" ]; then
             rm -rf neutro/ventas/data neutro/crm/data neutro/crm-care-comfort/data
           fi
