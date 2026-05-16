@@ -75,6 +75,7 @@ jobs:
           if [ -d crm ]; then cp -R crm neutro/; fi
           if [ -d crm-care-comfort ]; then cp -R crm-care-comfort neutro/; fi
           if [ -d videos-neutral ]; then cp videos-neutral/index.html neutro/videos.html; fi
+          if [ -d videos-neutral ]; then mkdir -p neutro/videos && cp videos-neutral/index.html neutro/videos/index.html; fi
           if [ -d videos-neutral/media ]; then mkdir -p neutro/videos && cp -R videos-neutral/media neutro/videos/; fi
           if [ "$DEPLOY_RUNTIME_DATA" != "true" ]; then
             rm -rf neutro/ventas/data neutro/crm/data neutro/crm-care-comfort/data

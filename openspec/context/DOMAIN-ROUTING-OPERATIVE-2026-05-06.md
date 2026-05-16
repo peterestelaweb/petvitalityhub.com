@@ -22,6 +22,9 @@ This note defines the canonical domain routing to avoid confusion during deploym
 - Publish the video catalogue in both forms:
   - `videos.html` at the root for menu links.
   - `videos/index.html` plus `videos/media/` for `/videos/`.
+- Publish the neutral catalogue in the same two forms under its own deploy target:
+  - `videos.html`
+  - `videos/index.html` plus `videos/media/`
 - Keep `ventas/` reserved for the CRM / sales console. Do not embed the video catalogue inside `ventas/`.
 
 ## 2026-05-16 incident note
