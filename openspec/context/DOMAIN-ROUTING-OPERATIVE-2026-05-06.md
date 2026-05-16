@@ -39,6 +39,10 @@ This note defines the canonical domain routing to avoid confusion during deploym
 - The sync workflow is `.github/workflows/sync-neutro.yml`.
 - The neutral repo must own its own Banahosting deploy workflow and FTP secrets.
 - Neutral videos use `videos-neutral/index.html`, `videos-neutral/media/` for clean images, and original Netlify video URLs without QR.
+- Required secrets:
+  - In `peterestelaweb/petvitalityhub.com`: `NEUTRO_TOKEN`, a GitHub token allowed to push to `peterestelaweb/lifepluspetsneutro`.
+  - In `peterestelaweb/lifepluspetsneutro`: `FTP_SERVER`, `FTP_USERNAME`, and `FTP_PASSWORD` for Banahosting.
+- 2026-05-16 verification: sync workflow code ran but failed because `NEUTRO_TOKEN` was missing; neutral deploy workflow ran but failed because FTP secrets were missing in the neutral repo.
 
 ## 2026-05-16 incident note
 
