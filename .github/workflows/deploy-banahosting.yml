@@ -23,7 +23,6 @@ on:
       - 'crm-care-comfort/**'
       - 'videos.html'
       - 'videos/**'
-      - 'videos-neutral/**'
       - '.github/workflows/deploy-banahosting.yml'
 
 jobs:
@@ -60,68 +59,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /
           local-dir: ./public/
-          security: loose
-          log-level: standard
-
-      - name: Generar versión neutra (sin formulario, sin tienda)
-        env:
-          DEPLOY_RUNTIME_DATA: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.deploy_runtime_data == 'true' }}
-        run: |
-          mkdir -p neutro
-          cp index.html neutro/index.html
-          cp guia.html neutro/guia.html
-          if [ -d assets ]; then cp -R assets neutro/; fi
-          if [ -d ventas ]; then cp -R ventas neutro/; fi
-          if [ -d crm ]; then cp -R crm neutro/; fi
-          if [ -d crm-care-comfort ]; then cp -R crm-care-comfort neutro/; fi
-          if [ -d videos-neutral ]; then cp videos-neutral/index.html neutro/videos.html; fi
-          if [ -d videos-neutral ]; then mkdir -p neutro/videos && cp videos-neutral/index.html neutro/videos/index.html; fi
-          if [ -d videos-neutral/media ]; then mkdir -p neutro/videos && cp -R videos-neutral/media neutro/videos/; fi
-          if [ "$DEPLOY_RUNTIME_DATA" != "true" ]; then
-            rm -rf neutro/ventas/data neutro/crm/data neutro/crm-care-comfort/data
-          fi
-
-          python3 - <<'EOF'
-          import re
-          from pathlib import Path
-
-          for path in [Path('neutro/index.html'), Path('neutro/guia.html')]:
-              content = path.read_text(encoding='utf-8')
-
-              content = re.sub(
-                  r'<!--\s*NEUTRO-REMOVE-START\s*-->.*?<!--\s*NEUTRO-REMOVE-END\s*-->',
-                  '', content, flags=re.DOTALL
-              )
-              content = re.sub(
-                  r'/\*\s*NEUTRO-REMOVE-START\s*\*/.*?/\*\s*NEUTRO-REMOVE-END\s*\*/',
-                  '', content, flags=re.DOTALL
-              )
-
-              content = content.replace(
-                  'https://ww1.lifeplus.com/SHVCB5/M/es/es/web-page/products?search=pets',
-                  'https://ww1.lifeplus.com/es/es/web-page/products?search=pets'
-              )
-              content = re.sub(
-                  r'https://ww1\.lifeplus\.com/SHVCB5/M/es/es/product-details/',
-                  'https://ww1.lifeplus.com/es/es/product-details/',
-                  content
-              )
-              content = re.sub(r'https://www\.lifeplus\.com/SHVCB5/S/', 'https://www.lifeplus.com/', content)
-              content = content.replace('ShopID SHVCB5', 'LifePlus International')
-              content = re.sub(r'<strong>SHVCB5</strong>', 'LifePlus International', content)
-
-              path.write_text(content, encoding='utf-8')
-
-          print("Version neutra generada OK")
-          EOF
-
-      - name: Deploy vitallinkplus.com (versión neutra)
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /lifepluspets.vitallinkplus.com/
-          local-dir: ./neutro/
           security: loose
           log-level: standard

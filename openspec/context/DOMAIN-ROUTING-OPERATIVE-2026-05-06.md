@@ -34,7 +34,11 @@ This note defines the canonical domain routing to avoid confusion during deploym
 - It generated `index-neutro.html` by copying the main `index.html`, replacing shop links / `SHVCB5`, and removing content wrapped in `NEUTRO-REMOVE` markers.
 - It then pushed the generated file to `peterestelaweb/lifepluspetsneutro` using the GitHub secret `NEUTRO_TOKEN`.
 - Historical evidence: repo `peterestelaweb/lifepluspetsneutro` has an Actions-authored commit named `sync: actualización automática desde lifepluspetshvcb5`.
-- Recommended future model: keep `petvitalityhub.com` and `lifepluspetsneutro` as separate repos, but restore a controlled sync workflow from the main repo to the neutral repo.
+- Current model restored: keep `petvitalityhub.com` and `lifepluspetsneutro` as separate repos, but use a controlled sync workflow from the main repo to the neutral repo.
+- The generator is `scripts/build_neutral_site.py`.
+- The sync workflow is `.github/workflows/sync-neutro.yml`.
+- The neutral repo must own its own Banahosting deploy workflow and FTP secrets.
+- Neutral videos use `videos-neutral/index.html`, `videos-neutral/media/` for clean images, and original Netlify video URLs without QR.
 
 ## 2026-05-16 incident note
 

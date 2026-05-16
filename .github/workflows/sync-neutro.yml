@@ -1,0 +1,48 @@
+name: Sync -> Repo Neutro
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'guia.html'
+      - 'assets/**'
+      - 'ventas/**'
+      - 'crm/**'
+      - 'crm-care-comfort/**'
+      - 'videos-neutral/**'
+      - 'scripts/build_neutral_site.py'
+      - '.github/workflows/sync-neutro.yml'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repo principal
+        uses: actions/checkout@v4
+
+      - name: Generar version neutra
+        run: python3 scripts/build_neutral_site.py
+
+      - name: Push al repo neutro
+        env:
+          NEUTRO_TOKEN: ${{ secrets.NEUTRO_TOKEN }}
+        run: |
+          if [ -z "$NEUTRO_TOKEN" ]; then
+            echo "Missing NEUTRO_TOKEN secret"
+            exit 1
+          fi
+
+          git clone https://x-access-token:${NEUTRO_TOKEN}@github.com/peterestelaweb/lifepluspetsneutro.git neutro-repo
+
+          find neutro-repo -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+          cp -R build/neutral-site/. neutro-repo/
+
+          cd neutro-repo
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add -A
+          git diff --staged --quiet && echo "Sin cambios" || git commit -m "sync: actualizacion automatica desde petvitalityhub.com"
+          git push origin main
