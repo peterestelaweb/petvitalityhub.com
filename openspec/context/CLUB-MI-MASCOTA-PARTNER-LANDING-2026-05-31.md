@@ -18,6 +18,14 @@ Work for this collaboration should stay isolated on a dedicated branch:
 codex/clubmimascota-landing
 ```
 
+Final publication note:
+
+- The branch `codex/clubmimascota-landing` was created for isolation and pushed to GitHub.
+- Its first commit was later fast-forwarded into `main`.
+- The final production correction was committed directly on `main` as `fa32c13`.
+- Therefore the current source of truth for the working published version is `origin/main`, not the old branch pointer.
+- If the branch is kept, update it from `main` before using it again; otherwise delete/archive it after confirming production.
+
 The existing Pet Vitality Hub home page must not be changed for this task. The partner page should duplicate the front/home page experience under `/clubmimascota/`, not replace or edit the root page. The scope is limited to:
 
 - `/clubmimascota/index.html`
@@ -32,6 +40,20 @@ ec023e7634a36ea55c7c6472b11f186c486d949f
 ```
 
 That commit includes the existing working site, including the current root `index.html`. Treat `origin/main` as the rollback reference for the already-working page.
+
+After publication, the working Club Mi Mascota version is backed up in GitHub on:
+
+```text
+origin/main @ fa32c13
+```
+
+This commit includes:
+
+- the full `/clubmimascota/` page based on the existing front/home page,
+- direct LifePlus product links with `SH31S3`,
+- the reusable banner file,
+- the deploy workflow change needed to publish `/clubmimascota/`,
+- this OpenSpec documentation.
 
 ## Deployment Requirement
 
@@ -97,6 +119,24 @@ Important implementation correction:
 - Product CTAs must not point only to the generic shop root.
 - Product CTAs must point to direct LifePlus product pages using the Club Mi Mascota shop route `SH31S3/M/es/es/product-details/...`.
 - The generic shop URL `https://ww1.lifeplus.com/SH31S3/S/` is acceptable for broad “Tienda oficial” navigation only, not for product-specific purchase buttons.
+
+Error log / lesson learned:
+
+1. The first implementation was too small: it created a reduced product landing instead of duplicating the existing front/home page experience. Correct behavior: preserve the original front-page structure and adapt the messaging/shop attribution for Club Mi Mascota.
+2. The first product CTAs pointed to the generic shop root. Correct behavior: product-specific buttons must go to product-specific LifePlus detail URLs using `SH31S3`.
+3. The first GitHub deploy still returned 404 because `.github/workflows/deploy-banahosting.yml` did not include `clubmimascota/**` in path filters or copy the directory to `public/`. Correct behavior: route folders need both workflow path triggers and explicit copy into `public/`.
+4. When checking publication, verify both the HTTP status and the rendered/source content from production. A `200` alone is not enough; verify expected title/copy and the product URLs.
+5. Do not treat a feature branch as final after a production hotfix on `main`. The final source of truth must be stated explicitly.
+
+Production verification checklist:
+
+- `https://petvitalityhub.com/` returns `200` and remains the existing main page.
+- `https://petvitalityhub.com/clubmimascota/` returns `200`.
+- The Club Mi Mascota page title is `LifePlus Pets para Club Mi Mascota | Pet Vitality Hub`.
+- The H1 communicates `LifePlus Pets para Club Mi Mascota`.
+- No `SHVCB5` appears in `/clubmimascota/`.
+- Product CTAs include `SH31S3/M/es/es/product-details`.
+- Generic `SH31S3/S/` only appears on broad shop links such as “Comprar” / “Tienda oficial”.
 
 Direct product links currently required:
 
