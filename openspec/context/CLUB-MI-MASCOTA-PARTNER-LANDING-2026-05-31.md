@@ -117,8 +117,8 @@ Important implementation correction:
 
 - `/clubmimascota/index.html` should reuse the full front-page structure from the existing Pet Vitality Hub home page.
 - Product CTAs must not point only to the generic shop root.
-- Product CTAs must point to direct LifePlus product pages using the Club Mi Mascota shop route `SH31S3/M/es/es/product-details/...`.
-- The generic shop URL `https://ww1.lifeplus.com/SH31S3/S/` is acceptable for broad “Tienda oficial” navigation only, not for product-specific purchase buttons.
+- Product CTAs must point to direct LifePlus product pages using the Club Mi Mascota shop route `SH31S3/S/es/es/product-details/...`.
+- The generic shop root `https://ww1.lifeplus.com/SH31S3/S/` is acceptable for broad “Tienda oficial” navigation only, not for product-specific purchase buttons.
 
 Error log / lesson learned:
 
@@ -135,17 +135,17 @@ Production verification checklist:
 - The Club Mi Mascota page title is `LifePlus Pets para Club Mi Mascota | Pet Vitality Hub`.
 - The H1 communicates `LifePlus Pets para Club Mi Mascota`.
 - No `SHVCB5` appears in `/clubmimascota/`.
-- Product CTAs include `SH31S3/M/es/es/product-details`.
-- Generic `SH31S3/S/` only appears on broad shop links such as “Comprar” / “Tienda oficial”.
+- Product CTAs include the shop route `SH31S3/S/es/es/product-details`.
+- Broad shop links such as “Comprar” / “Tienda oficial” may use the generic shop root `https://ww1.lifeplus.com/SH31S3/S/`.
 
 Direct product links currently required:
 
-- Digest: `https://ww1.lifeplus.com/SH31S3/M/es/es/product-details/3536/lifeplus-pets%AE-digest`
-- Calm: `https://ww1.lifeplus.com/SH31S3/M/es/es/product-details/3534/lifeplus-pets%AE-calm`
-- Care & Comfort: `https://ww1.lifeplus.com/SH31S3/M/es/es/product-details/3540/lifeplus-pets%AE-care-%26-comfort`
-- Move: `https://ww1.lifeplus.com/SH31S3/M/es/es/product-details/3535/lifeplus-pets%AE-move`
-- Peanut Butter Biscuits: `https://ww1.lifeplus.com/SH31S3/M/es/es/product-details/5390/lifeplus-pets%AE-peanut-butter-biscuits`
-- Ahiflower Oil: `https://ww1.lifeplus.com/SH31S3/M/es/es/product-details/3545/lifeplus-pets%AE-ahiflower%AE-oil`
+- Digest: `https://ww1.lifeplus.com/SH31S3/S/es/es/product-details/3536/lifeplus-pets%AE-digest`
+- Calm: `https://ww1.lifeplus.com/SH31S3/S/es/es/product-details/3534/lifeplus-pets%AE-calm`
+- Care & Comfort: `https://ww1.lifeplus.com/SH31S3/S/es/es/product-details/3540/lifeplus-pets%AE-care-%26-comfort`
+- Move: `https://ww1.lifeplus.com/SH31S3/S/es/es/product-details/3535/lifeplus-pets%AE-move`
+- Peanut Butter Biscuits: `https://ww1.lifeplus.com/SH31S3/S/es/es/product-details/5390/lifeplus-pets%AE-peanut-butter-biscuits`
+- Ahiflower Oil: `https://ww1.lifeplus.com/SH31S3/S/es/es/product-details/3545/lifeplus-pets%AE-ahiflower%AE-oil`
 
 ## Placement on Club Mi Mascota
 
