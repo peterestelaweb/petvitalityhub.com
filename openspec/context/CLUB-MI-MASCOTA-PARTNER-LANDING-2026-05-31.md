@@ -18,7 +18,7 @@ Work for this collaboration should stay isolated on a dedicated branch:
 codex/clubmimascota-landing
 ```
 
-The existing Pet Vitality Hub home page must not be changed for this task. The scope is limited to:
+The existing Pet Vitality Hub home page must not be changed for this task. The partner page should duplicate the front/home page experience under `/clubmimascota/`, not replace or edit the root page. The scope is limited to:
 
 - `/clubmimascota/index.html`
 - `/clubmimascota/banners.html`
@@ -90,6 +90,22 @@ The page is intentionally limited to the main collaboration landing plus the six
 - Ahiflower Oil
 
 Copy must avoid medical promises and curing language. Prefer: `bienestar`, `soporte`, `cuidado diario`, `ayuda a mantener`, and `acompana`.
+
+Important implementation correction:
+
+- `/clubmimascota/index.html` should reuse the full front-page structure from the existing Pet Vitality Hub home page.
+- Product CTAs must not point only to the generic shop root.
+- Product CTAs must point to direct LifePlus product pages using the Club Mi Mascota shop route `SH31S3/M/es/es/product-details/...`.
+- The generic shop URL `https://ww1.lifeplus.com/SH31S3/S/` is acceptable for broad “Tienda oficial” navigation only, not for product-specific purchase buttons.
+
+Direct product links currently required:
+
+- Digest: `https://ww1.lifeplus.com/SH31S3/M/es/es/product-details/3536/lifeplus-pets%AE-digest`
+- Calm: `https://ww1.lifeplus.com/SH31S3/M/es/es/product-details/3534/lifeplus-pets%AE-calm`
+- Care & Comfort: `https://ww1.lifeplus.com/SH31S3/M/es/es/product-details/3540/lifeplus-pets%AE-care-%26-comfort`
+- Move: `https://ww1.lifeplus.com/SH31S3/M/es/es/product-details/3535/lifeplus-pets%AE-move`
+- Peanut Butter Biscuits: `https://ww1.lifeplus.com/SH31S3/M/es/es/product-details/5390/lifeplus-pets%AE-peanut-butter-biscuits`
+- Ahiflower Oil: `https://ww1.lifeplus.com/SH31S3/M/es/es/product-details/3545/lifeplus-pets%AE-ahiflower%AE-oil`
 
 ## Placement on Club Mi Mascota
 
