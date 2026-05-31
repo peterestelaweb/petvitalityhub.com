@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LifePlus Pets para Club Mi Mascota | Pet Vitality Hub</title>
+  <meta name="description" content="Selección de suplementos naturales LifePlus Pets para acompañar el bienestar diario de las mascotas de la comunidad de Club Mi Mascota.">
+  <style>
+    :root {
+      --green: #1f7a4d;
+      --green-dark: #14563a;
+      --navy: #172a4d;
+      --gold: #caa24a;
+      --cream: #f7f3ea;
+      --white: #ffffff;
+      --ink: #17211d;
+      --muted: #647067;
+      --line: #e8dfcf;
+      --soft: #f5f8f3;
+      --shadow: 0 20px 60px rgba(23, 42, 77, 0.14);
+      --radius: 8px;
+      --shop-url: "https://ww1.lifeplus.com/SH31S3/S/";
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #fffaf1;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 250, 241, 0.94);
+      border-bottom: 1px solid rgba(232, 223, 207, 0.82);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      background: var(--green);
+      font-weight: 900;
+      font-size: 22px;
+    }
+
+    .brand-name {
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      line-height: 1.05;
+    }
+
+    .brand-sub {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: #405048;
+      font-size: 14px;
+      font-weight: 750;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+    }
+
+    .btn {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      font-weight: 900;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: var(--green);
+      box-shadow: 0 12px 28px rgba(31, 122, 77, 0.23);
+    }
+
+    .btn-secondary {
+      color: var(--navy);
+      background: var(--white);
+      border-color: var(--line);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(130deg, rgba(23, 42, 77, 0.88), rgba(31, 122, 77, 0.76)),
+        url("https://images.unsplash.com/photo-1544568100-847a948585b9?w=1800&q=82") center / cover;
+      color: var(--white);
+    }
+
+    .hero-inner {
+      min-height: 720px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 430px);
+      align-items: center;
+      gap: 56px;
+      padding: 96px 0 72px;
+    }
+
+    .eyebrow {
+      color: #f1ce76;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(46px, 7vw, 82px);
+      line-height: 0.98;
+      max-width: 780px;
+      margin: 0 0 22px;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 690px;
+      margin: 0 0 28px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 20px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .hero-note {
+      margin: 20px 0 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 14px;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.96);
+      color: var(--ink);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+    }
+
+    .hero-card h2 {
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 30px;
+      line-height: 1.1;
+      margin: 0 0 12px;
+    }
+
+    .product-stack {
+      min-height: 170px;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      gap: 10px;
+      margin: 22px 0;
+      padding: 18px;
+      background: linear-gradient(180deg, #fff, var(--soft));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .product-stack img {
+      width: 86px;
+      height: 122px;
+      object-fit: contain;
+    }
+
+    .product-stack img:nth-child(2) {
+      width: 104px;
+      height: 148px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--navy);
+      background: #fff;
+      font-size: 12px;
+      font-weight: 850;
+      padding: 7px 10px;
+    }
+
+    .section {
+      padding: 90px 0;
+      background: var(--white);
+    }
+
+    .section.alt {
+      background: var(--cream);
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 38px;
+    }
+
+    .section-label {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 950;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin: 0 0 10px;
+    }
+
+    .section-title {
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(34px, 4.5vw, 56px);
+      line-height: 1.05;
+      margin: 0 0 14px;
+    }
+
+    .section-text {
+      color: var(--muted);
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .pillar {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .pillar strong {
+      display: block;
+      color: var(--navy);
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .pillar p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .product-card {
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr);
+      gap: 22px;
+      align-items: center;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 12px 34px rgba(23, 42, 77, 0.07);
+    }
+
+    .product-art {
+      height: 100%;
+      min-height: 255px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #f8fbf5, #efe6d3);
+      padding: 22px;
+    }
+
+    .product-art img {
+      max-height: 175px;
+      object-fit: contain;
+      filter: drop-shadow(0 16px 22px rgba(23, 42, 77, 0.16));
+    }
+
+    .product-body {
+      padding: 24px 24px 24px 0;
+    }
+
+    .product-tag {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .product-name {
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 27px;
+      line-height: 1.15;
+      margin: 7px 0 8px;
+    }
+
+    .product-body p {
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+
+    .product-cta {
+      color: var(--green-dark);
+      font-weight: 950;
+      text-decoration: none;
+    }
+
+    .official-note {
+      margin-top: 34px;
+      border: 1px solid rgba(202, 162, 74, 0.45);
+      background: #fff8e7;
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      color: #66511f;
+      font-weight: 750;
+    }
+
+    .footer {
+      background: #181a19;
+      color: rgba(255, 255, 255, 0.74);
+      padding: 58px 0 34px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 34px;
+      margin-bottom: 44px;
+    }
+
+    .footer h3,
+    .footer h4 {
+      color: var(--white);
+      margin: 0 0 14px;
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
+    .shop-id {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      margin-top: 18px;
+      padding: 10px 13px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius);
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 13px;
+    }
+
+    .shop-id strong {
+      color: #8ce0aa;
+    }
+
+    .footer a {
+      color: rgba(255, 255, 255, 0.74);
+      text-decoration: none;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 9px;
+      font-size: 14px;
+    }
+
+    .disclaimer {
+      border-top: 1px solid rgba(255, 255, 255, 0.09);
+      padding-top: 24px;
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 12px;
+      max-width: 780px;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-inner,
+      .products-grid,
+      .pillars,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-inner {
+        min-height: auto;
+        padding: 72px 0 44px;
+      }
+
+      .product-card {
+        grid-template-columns: 1fr;
+      }
+
+      .product-body {
+        padding: 0 22px 24px;
+      }
+
+      .product-art {
+        min-height: 210px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Navegacion principal">
+    <div class="container nav-inner">
+      <a class="brand" href="/clubmimascota/" aria-label="LifePlus Pets para Club Mi Mascota">
+        <span class="brand-mark">+</span>
+        <span>
+          <span class="brand-name">LifePlus Pets</span><br>
+          <span class="brand-sub">Club Mi Mascota</span>
+        </span>
+      </a>
+      <div class="nav-links">
+        <a href="#seleccion">Selección</a>
+        <a href="#productos">Productos</a>
+        <a href="#compra">Compra oficial</a>
+        <a class="btn btn-primary" href="https://ww1.lifeplus.com/SH31S3/S/" target="_blank" rel="noopener">Tienda oficial</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-inner">
+        <div>
+          <p class="eyebrow">Colaboración seleccionada por Club Mi Mascota</p>
+          <h1>LifePlus Pets para Club Mi Mascota</h1>
+          <p class="hero-copy">
+            Una selección de suplementos naturales para acompañar el bienestar diario de las mascotas de la comunidad de Club Mi Mascota: digestión, calma, movilidad, piel, pelaje y cuidado cotidiano.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#productos">Ver productos recomendados</a>
+            <a class="btn btn-secondary" href="https://ww1.lifeplus.com/SH31S3/S/" target="_blank" rel="noopener">Comprar en tienda oficial</a>
+          </div>
+          <p class="hero-note">La compra se realiza en la tienda oficial LifePlus de Club Mi Mascota.</p>
+        </div>
+
+        <aside class="hero-card" aria-label="Productos LifePlus Pets destacados">
+          <h2>Cuidado diario con productos oficiales LifePlus Pets</h2>
+          <p>Productos elegidos para rutinas de bienestar, soporte nutricional y acompañamiento diario.</p>
+          <div class="product-stack" aria-hidden="true">
+            <img src="https://ww1.lifeplus.com/images/products/prodpic_3534_1.jpg" alt="">
+            <img src="https://ww1.lifeplus.com/images/products/prodpic_3536_1.jpg" alt="">
+            <img src="https://ww1.lifeplus.com/images/products/prodpic_3545_1.jpg" alt="">
+          </div>
+          <div class="chips">
+            <span class="chip">Digest</span>
+            <span class="chip">Calm</span>
+            <span class="chip">Care &amp; Comfort</span>
+            <span class="chip">Move</span>
+            <span class="chip">Biscuits</span>
+            <span class="chip">Ahiflower Oil</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section alt" id="seleccion">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-label">Bienestar, soporte y cuidado diario</p>
+          <h2 class="section-title">Una selección pensada para acompañar rutinas reales.</h2>
+          <p class="section-text">
+            Club Mi Mascota acerca esta gama a su comunidad como una opción natural para ayudar a mantener el bienestar cotidiano de perros y gatos, siempre dentro de una rutina responsable y con criterio veterinario cuando sea necesario.
+          </p>
+        </div>
+
+        <div class="pillars">
+          <div class="pillar">
+            <strong>Rutina diaria</strong>
+            <p>Formatos sencillos para integrar en la alimentacion, el premio o el cuidado externo.</p>
+          </div>
+          <div class="pillar">
+            <strong>Ingredientes naturales</strong>
+            <p>Fórmulas LifePlus Pets con ingredientes seleccionados y comunicación clara.</p>
+          </div>
+          <div class="pillar">
+            <strong>Compra oficial</strong>
+            <p>Todos los botones llevan a la tienda oficial LifePlus de Club Mi Mascota, ShopID SH31S3.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="productos">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-label">Productos recomendados</p>
+          <h2 class="section-title">LifePlus Pets para la comunidad de Club Mi Mascota.</h2>
+          <p class="section-text">Seis referencias principales para acompañar diferentes necesidades de bienestar diario.</p>
+        </div>
+
+        <div class="products-grid">
+          <article class="product-card">
+            <div class="product-art">
+              <img src="https://ww1.lifeplus.com/images/products/prodpic_3536_1.jpg" alt="Lifeplus Pets Digest">
+            </div>
+            <div class="product-body">
+              <span class="product-tag">Digestión</span>
+              <h3 class="product-name">Lifeplus Pets Digest</h3>
+              <p>Apoyo diario para ayudar a mantener el equilibrio digestivo y acompañar una rutina intestinal saludable.</p>
+              <a class="product-cta" href="https://ww1.lifeplus.com/SH31S3/S/" target="_blank" rel="noopener">Comprar Digest en tienda oficial</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-art">
+              <img src="https://ww1.lifeplus.com/images/products/prodpic_3534_1.jpg" alt="Lifeplus Pets Calm">
+            </div>
+            <div class="product-body">
+              <span class="product-tag">Calma</span>
+              <h3 class="product-name">Lifeplus Pets Calm</h3>
+              <p>Formato masticable para acompañar momentos de cambio, viajes o situaciones en las que conviene favorecer una rutina tranquila.</p>
+              <a class="product-cta" href="https://ww1.lifeplus.com/SH31S3/S/" target="_blank" rel="noopener">Comprar Calm en tienda oficial</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-art">
+              <img src="https://ww1.lifeplus.com/images/products/prodpic_3540_1.jpg" alt="Lifeplus Pets Care and Comfort">
+            </div>
+            <div class="product-body">
+              <span class="product-tag">Cuidado externo</span>
+              <h3 class="product-name">Care &amp; Comfort</h3>
+              <p>Aerosol de cuidado externo para perros, pensado para acompañar el confort de piel y pelaje dentro de una rutina responsable.</p>
+              <a class="product-cta" href="https://ww1.lifeplus.com/SH31S3/S/" target="_blank" rel="noopener">Comprar Care &amp; Comfort en tienda oficial</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-art">
+              <img src="https://ww1.lifeplus.com/images/products/prodpic_3535_1.jpg" alt="Lifeplus Pets Move">
+            </div>
+            <div class="product-body">
+              <span class="product-tag">Movilidad</span>
+              <h3 class="product-name">Lifeplus Pets Move</h3>
+              <p>Soporte nutricional para ayudar a mantener movilidad, flexibilidad y comodidad diaria en perros activos o senior.</p>
+              <a class="product-cta" href="https://ww1.lifeplus.com/SH31S3/S/" target="_blank" rel="noopener">Comprar Move en tienda oficial</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-art">
+              <img src="https://ww1.lifeplus.com/images/products/prodpic_5390_1.jpg" alt="Lifeplus Pets Peanut Butter Biscuits">
+            </div>
+            <div class="product-body">
+              <span class="product-tag">Premio diario</span>
+              <h3 class="product-name">Peanut Butter Biscuits</h3>
+              <p>Galletas con mantequilla de cacahuete para premiar y acompañar una rutina de cuidado cotidiano.</p>
+              <a class="product-cta" href="https://ww1.lifeplus.com/SH31S3/S/" target="_blank" rel="noopener">Comprar Biscuits en tienda oficial</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-art">
+              <img src="https://ww1.lifeplus.com/images/products/prodpic_3545_1.jpg" alt="Lifeplus Pets Ahiflower Oil">
+            </div>
+            <div class="product-body">
+              <span class="product-tag">Piel y pelaje</span>
+              <h3 class="product-name">Ahiflower Oil</h3>
+              <p>Aceite vegetal con omegas para ayudar a mantener piel y pelaje dentro de una rutina nutricional equilibrada.</p>
+              <a class="product-cta" href="https://ww1.lifeplus.com/SH31S3/S/" target="_blank" rel="noopener">Comprar Ahiflower Oil en tienda oficial</a>
+            </div>
+          </article>
+        </div>
+
+        <p class="official-note" id="compra">
+          Nota: la compra se realiza en la tienda oficial LifePlus de Club Mi Mascota. ShopID usado para esta colaboración: SH31S3.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>LifePlus Pets para Club Mi Mascota</h3>
+          <p>Selección natural para acompañar el bienestar diario de mascotas de la comunidad.</p>
+          <div class="shop-id"><span>ShopID:</span><strong>SH31S3</strong></div>
+        </div>
+        <div>
+          <h4>Productos</h4>
+          <ul class="footer-links">
+            <li><a href="https://ww1.lifeplus.com/SH31S3/S/" target="_blank" rel="noopener">Digest</a></li>
+            <li><a href="https://ww1.lifeplus.com/SH31S3/S/" target="_blank" rel="noopener">Calm</a></li>
+            <li><a href="https://ww1.lifeplus.com/SH31S3/S/" target="_blank" rel="noopener">Care &amp; Comfort</a></li>
+            <li><a href="https://ww1.lifeplus.com/SH31S3/S/" target="_blank" rel="noopener">Move</a></li>
+            <li><a href="https://ww1.lifeplus.com/SH31S3/S/" target="_blank" rel="noopener">Peanut Butter Biscuits</a></li>
+            <li><a href="https://ww1.lifeplus.com/SH31S3/S/" target="_blank" rel="noopener">Ahiflower Oil</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Compra oficial</h4>
+          <ul class="footer-links">
+            <li><a href="https://ww1.lifeplus.com/SH31S3/S/" target="_blank" rel="noopener">Tienda oficial LifePlus de Club Mi Mascota</a></li>
+            <li><a href="#productos">Ver productos recomendados</a></li>
+            <li><a href="/">Pet Vitality Hub</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="disclaimer">
+        Estos productos no están destinados a diagnosticar, tratar, curar ni prevenir ninguna enfermedad. Los suplementos son complementos nutricionales y no sustituyen el consejo veterinario profesional. Consulta siempre con tu veterinario antes de iniciar cualquier suplementación.
+      </p>
+      <p class="disclaimer" style="border-top: 0; padding-top: 14px;">
+        © 2026 LifePlus Pets España · Club Mi Mascota · ShopID SH31S3
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

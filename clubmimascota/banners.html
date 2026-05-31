@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Banners LifePlus Pets para Club Mi Mascota</title>
+  <style>
+    :root {
+      --cmm-navy: #172a4d;
+      --cmm-gold: #caa24a;
+      --cmm-cream: #f6f4ef;
+      --cmm-ink: #333842;
+      --cmm-soft: #ffffff;
+      --cmm-border: #e8e1d2;
+      --cmm-muted: #6d7280;
+      --shadow: 0 14px 42px rgba(23, 42, 77, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f4f2ee;
+      color: var(--cmm-ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+      padding: 48px 18px;
+    }
+
+    .page {
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .label {
+      color: var(--cmm-muted);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      margin: 0 0 12px;
+      text-transform: uppercase;
+    }
+
+    .mock-section {
+      margin-bottom: 36px;
+    }
+
+    .lifeplus-banner {
+      align-items: stretch;
+      background:
+        radial-gradient(circle at 88% 18%, rgba(202, 162, 74, 0.16), transparent 28%),
+        linear-gradient(135deg, #ffffff 0%, #fbfaf7 52%, #f4efe3 100%);
+      border: 1px solid var(--cmm-border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 0;
+      grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+      overflow: hidden;
+    }
+
+    .lifeplus-banner__content {
+      padding: 38px 42px;
+    }
+
+    .lifeplus-banner__eyebrow {
+      color: var(--cmm-gold);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      margin: 0 0 12px;
+      text-transform: uppercase;
+    }
+
+    .lifeplus-banner__title {
+      color: var(--cmm-navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(31px, 4vw, 48px);
+      line-height: 1.08;
+      margin: 0 0 16px;
+    }
+
+    .lifeplus-banner__text {
+      color: #3d414b;
+      font-size: 17px;
+      margin: 0 0 24px;
+      max-width: 680px;
+    }
+
+    .lifeplus-banner__actions {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .lifeplus-banner__button {
+      align-items: center;
+      background: var(--cmm-gold);
+      border-radius: 999px;
+      color: #ffffff;
+      display: inline-flex;
+      font-size: 14px;
+      font-weight: 800;
+      justify-content: center;
+      letter-spacing: 0.02em;
+      min-height: 46px;
+      padding: 0 26px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+      white-space: nowrap;
+    }
+
+    .lifeplus-banner__button:hover {
+      background: #b98f35;
+      box-shadow: 0 10px 24px rgba(202, 162, 74, 0.32);
+      transform: translateY(-1px);
+    }
+
+    .lifeplus-banner__note {
+      color: var(--cmm-muted);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .lifeplus-banner__visual {
+      align-items: center;
+      background: linear-gradient(160deg, rgba(23, 42, 77, 0.96), rgba(23, 42, 77, 0.84));
+      display: flex;
+      justify-content: center;
+      min-height: 280px;
+      padding: 28px;
+      position: relative;
+    }
+
+    .lifeplus-banner__visual-card {
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.64);
+      border-radius: 20px;
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.18);
+      max-width: 280px;
+      padding: 24px 22px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .lifeplus-banner__product-row {
+      align-items: end;
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 18px;
+      min-height: 120px;
+    }
+
+    .lifeplus-banner__product-row img {
+      display: block;
+      height: 100px;
+      max-width: 72px;
+      object-fit: contain;
+    }
+
+    .lifeplus-banner__product-row img:nth-child(2) {
+      height: 118px;
+      max-width: 84px;
+    }
+
+    .lifeplus-banner__visual-title {
+      color: var(--cmm-navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 22px;
+      line-height: 1.15;
+      margin: 0 0 8px;
+    }
+
+    .lifeplus-banner__visual-text {
+      color: var(--cmm-muted);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .footer-strip {
+      align-items: center;
+      background: var(--cmm-navy);
+      border-radius: 14px;
+      color: #ffffff;
+      display: flex;
+      gap: 18px;
+      justify-content: space-between;
+      padding: 20px 24px;
+    }
+
+    .footer-strip strong {
+      color: #ffffff;
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 24px;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .footer-strip span {
+      color: rgba(255, 255, 255, 0.78);
+      display: block;
+      font-size: 14px;
+    }
+
+    .footer-strip a {
+      background: var(--cmm-gold);
+      border-radius: 999px;
+      color: #ffffff;
+      flex: 0 0 auto;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 12px 20px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .elementor-brief {
+      background: #ffffff;
+      border: 1px solid var(--cmm-border);
+      border-radius: 14px;
+      color: var(--cmm-ink);
+      padding: 28px;
+    }
+
+    .elementor-brief h2,
+    .elementor-brief h3 {
+      color: var(--cmm-navy);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.12;
+      margin: 0 0 12px;
+    }
+
+    .elementor-brief h2 {
+      font-size: 30px;
+    }
+
+    .elementor-brief h3 {
+      font-size: 22px;
+      margin-top: 24px;
+    }
+
+    .elementor-brief p {
+      margin: 0 0 12px;
+    }
+
+    .elementor-brief ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .elementor-brief li {
+      margin: 7px 0;
+    }
+
+    .elementor-brief code {
+      background: #f6f4ef;
+      border: 1px solid var(--cmm-border);
+      border-radius: 6px;
+      padding: 2px 6px;
+    }
+
+    @media (max-width: 820px) {
+      body {
+        padding: 28px 12px;
+      }
+
+      .lifeplus-banner {
+        grid-template-columns: 1fr;
+      }
+
+      .lifeplus-banner__content {
+        padding: 30px 24px;
+      }
+
+      .lifeplus-banner__visual {
+        min-height: 230px;
+      }
+
+      .footer-strip {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="mock-section">
+      <p class="label">Opción recomendada para Ventajas del Club, antes del listado de colaboradores o como primer bloque destacado</p>
+      <p class="label">La opción visual grande es la preferida porque enseña producto real y aumenta la probabilidad de clic. La compacta queda como alternativa discreta para zonas menos protagonistas.</p>
+      <article class="lifeplus-banner" aria-label="LifePlus Pets para Club Mi Mascota">
+        <div class="lifeplus-banner__content">
+          <p class="lifeplus-banner__eyebrow">Selección Club Mi Mascota</p>
+          <h1 class="lifeplus-banner__title">LifePlus Pets para Club Mi Mascota</h1>
+          <p class="lifeplus-banner__text">
+            Una selección de suplementos naturales para acompañar el bienestar diario de tu mascota:
+            digestión, calma, movilidad, piel, pelaje y cuidado cotidiano.
+          </p>
+          <div class="lifeplus-banner__actions">
+            <a class="lifeplus-banner__button" href="https://petvitalityhub.com/clubmimascota/" target="_blank" rel="noopener">
+              Ver productos
+            </a>
+            <p class="lifeplus-banner__note">Compra en la tienda oficial LifePlus de Club Mi Mascota.</p>
+          </div>
+        </div>
+        <div class="lifeplus-banner__visual" aria-hidden="true">
+          <div class="lifeplus-banner__visual-card">
+            <div class="lifeplus-banner__product-row">
+              <img src="https://ww1.lifeplus.com/images/products/prodpic_3534_1.jpg" alt="">
+              <img src="https://ww1.lifeplus.com/images/products/prodpic_3536_1.jpg" alt="">
+              <img src="https://ww1.lifeplus.com/images/products/prodpic_3545_1.jpg" alt="">
+            </div>
+            <p class="lifeplus-banner__visual-title">Cuidado diario, selección premium</p>
+            <p class="lifeplus-banner__visual-text">Productos oficiales LifePlus Pets</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="mock-section">
+      <p class="label">Versión compacta alternativa para footer o parte baja de página</p>
+      <div class="footer-strip">
+        <div>
+          <strong>LifePlus Pets x Club Mi Mascota</strong>
+          <span>Suplementos naturales para acompañar el bienestar diario de perros y gatos.</span>
+        </div>
+        <a href="https://petvitalityhub.com/clubmimascota/" target="_blank" rel="noopener">Ver productos</a>
+      </div>
+    </section>
+
+    <section class="mock-section elementor-brief" aria-label="Guía para recrear los banners en Elementor">
+      <h2>Versión fácil de recrear en Elementor</h2>
+      <p>Estos banners se entregan en HTML/CSS reutilizable, pero también pueden montarse manualmente en Elementor con los siguientes textos, colores, imágenes, CTA y orden de bloques.</p>
+
+      <h3>Banner visual grande</h3>
+      <ul>
+        <li><strong>Ubicación recomendada:</strong> página “Ventajas del Club”, antes del listado de colaboradores o como primer bloque destacado.</li>
+        <li><strong>Estructura:</strong> contenedor de dos columnas; contenido a la izquierda y tarjeta visual de producto a la derecha.</li>
+        <li><strong>Colores:</strong> azul marino <code>#172a4d</code>, dorado <code>#caa24a</code>, crema <code>#f6f4ef</code>, borde <code>#e8e1d2</code>, texto <code>#333842</code>.</li>
+        <li><strong>Eyebrow:</strong> Selección Club Mi Mascota</li>
+        <li><strong>Título:</strong> LifePlus Pets para Club Mi Mascota</li>
+        <li><strong>Texto:</strong> Una selección de suplementos naturales para acompañar el bienestar diario de tu mascota: digestión, calma, movilidad, piel, pelaje y cuidado cotidiano.</li>
+        <li><strong>CTA:</strong> Ver productos</li>
+        <li><strong>Link:</strong> https://petvitalityhub.com/clubmimascota/</li>
+        <li><strong>Nota:</strong> Compra en la tienda oficial LifePlus de Club Mi Mascota.</li>
+        <li><strong>Imágenes:</strong> Calm <code>prodpic_3534_1.jpg</code>, Digest <code>prodpic_3536_1.jpg</code>, Ahiflower Oil <code>prodpic_3545_1.jpg</code>.</li>
+        <li><strong>Orden:</strong> eyebrow, título, texto, CTA + nota, tarjeta con imágenes de producto.</li>
+      </ul>
+
+      <h3>Banner compacto</h3>
+      <ul>
+        <li><strong>Ubicación:</strong> footer, final de página o zona menos protagonista.</li>
+        <li><strong>Estructura:</strong> franja horizontal con título y texto a la izquierda, CTA a la derecha; apilado en móvil.</li>
+        <li><strong>Colores:</strong> fondo azul marino <code>#172a4d</code>, botón dorado <code>#caa24a</code>, texto blanco.</li>
+        <li><strong>Título:</strong> LifePlus Pets x Club Mi Mascota</li>
+        <li><strong>Texto:</strong> Suplementos naturales para acompañar el bienestar diario de perros y gatos.</li>
+        <li><strong>CTA:</strong> Ver productos</li>
+        <li><strong>Link:</strong> https://petvitalityhub.com/clubmimascota/</li>
+        <li><strong>Orden:</strong> título, texto, CTA.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

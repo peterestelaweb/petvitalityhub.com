@@ -21,6 +21,7 @@ on:
       - 'ventas/**'
       - 'crm/**'
       - 'crm-care-comfort/**'
+      - 'clubmimascota/**'
       - 'videos.html'
       - 'videos/**'
       - '.github/workflows/deploy-banahosting.yml'
@@ -44,6 +45,7 @@ jobs:
           if [ -d ventas ]; then cp -R ventas public/; fi
           if [ -d crm ]; then cp -R crm public/; fi
           if [ -d crm-care-comfort ]; then cp -R crm-care-comfort public/; fi
+          if [ -d clubmimascota ]; then cp -R clubmimascota public/; fi
           if [ -f videos.html ]; then cp videos.html public/videos.html; fi
           if [ -f videos/index.html ]; then mkdir -p public/videos && cp videos/index.html public/videos/index.html; fi
           if [ -d videos/media ]; then mkdir -p public/videos && cp -R videos/media public/videos/; fi
